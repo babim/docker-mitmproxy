@@ -12,7 +12,7 @@ RUN apt-get clean && \
     rm -rf /tmp/* /var/tmp/* && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup && \
-    && rm -rf ~/.cache/pip \
+    rm -rf ~/.cache/pip \
     && adduser -u 7799 -D mitmproxy
     
 USER mitmproxy
