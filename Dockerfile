@@ -1,4 +1,4 @@
-FROM babim/ubuntubase
+FROM babim/debianbase
 
 RUN apt-get update && \
     apt-get install -yq python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
