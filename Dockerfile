@@ -1,7 +1,5 @@
 FROM babim/ubuntubase
 
-MAINTAINER "Duc Anh Babim" <ducanh.babim@yahoo.com>
-
 RUN apt-get update && \
     apt-get install -yq python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
     pip install mitmproxy && echo "mitmproxy" > /start.sh && chmod +x /start.sh
