@@ -1,8 +1,9 @@
-FROM babim/debianbase
+FROM babim/ubuntubase
 
 RUN apt-get update && \
-    apt-get install -yq python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
-    pip install mitmproxy && echo "mitmproxy" > /start.sh && chmod +x /start.sh
+    apt-get install -yq python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+
+RUN pip install mitmproxy && echo "mitmproxy" > /start.sh && chmod +x /start.sh
 
 RUN apt-get clean && \
     apt-get autoclean && \
@@ -12,7 +13,7 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup && \
     && rm -rf ~/.cache/pip \
-    && adduser -u 7799 -D mitmproxy && chown mitmproxy /start.sh
+    && adduser -u 7799 -D mitmproxy
     
 USER mitmproxy
 RUN mkdir /home/mitmproxy/.mitmproxy
