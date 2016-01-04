@@ -13,7 +13,7 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup && \
     rm -rf ~/.cache/pip \
-    && adduser -u 7799 -D mitmproxy
+    && adduser -u 7799 mitmproxy
     
 USER mitmproxy
 RUN mkdir /home/mitmproxy/.mitmproxy
